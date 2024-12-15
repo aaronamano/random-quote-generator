@@ -1,15 +1,16 @@
 <template>
-  <div>
-    <div class="quote-container">
-      <div class="quote-content">
-        <h1>Random Quote Generator</h1>
-        <p>{{ quote.content }}</p>
-        <p>- {{ quote.author }}</p>
-        <button @click="generateQuote">Generate New Quote</button>
-
-      </div>
+  <div class="quote-container">
+    <div class="quote-content">
+      <h1>Random Quote Generator</h1>
+      <p>{{ quote.content }}</p>
+      <p>- {{ quote.author }}</p>
     </div>
   </div>
+
+  <div class="button-container">
+    <button @click="generateQuote">Generate New Quote</button>
+  </div>
+
 </template>
 
 <script>
@@ -32,7 +33,13 @@ export default {
         { content: "If you have hate in your heart, then you have already lost.", author: "Daniel LaRusso" },
         { content: "When the fight comes to you, you have to be ready to fight back.", author: "Daniel LaRusso" },
         { content: "You just gotta feel the energy and just live in the moment, you know?", author: "Hawk" },
-
+        { content: "Defense comes in many forms.", author: "Chozen" },
+        { content: "If an enemy insists on war, remove his ability to wage it.", author: "Chozen" },
+        { content: "Everyone thinks their way is the only way. You, my dad, Cobra Kai, the truth is it doesn't matter which way you fight as long as it works.", author: "Robby Keene" },
+        { content: "OK to lose to opponent, must not lose to fear.", author: "Mr. Miyagi" },
+        { content: "Answer is only important if you are asking the right question.", author: "Mr. Miyagi" },
+        { content: "The biggest battle is always the one within.", author: "Daniel Larusso" },
+        { content: "The Best Defense Is More Offense.", author: "Johnny Lawrence" }
       ],
       quote: { content: "", author: "" }
     }
@@ -60,7 +67,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 400px; /* Adjust this value as needed */
+  height: 200px;
   max-width: 600px;
 }
 
@@ -82,21 +89,27 @@ export default {
 
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: white;
-  color: rgb(177, 14, 14);
-  border-radius: 5px;
-  border-color: #635518;
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-}
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(227, 216, 216);
+    color: rgb(177, 14, 14);
+    border-radius: 5px;
+    border-color: #635518;
 
-button:hover {
-  background-color: rgb(7, 80, 5);
-  color: yellow;
+  }
+
+  button:hover {
+    background-color: rgb(7, 80, 5);
+    color: yellow;
+  }
 }
 </style>
 
