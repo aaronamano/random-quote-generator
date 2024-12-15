@@ -1,9 +1,14 @@
 <template>
   <div>
-    <h1>Random Quote Generator</h1>
-    <p>{{ quote.content }}</p>
-    <p>- {{ quote.author }}</p>
-    <button @click="generateQuote">Generate New Quote</button>
+    <div class="quote-container">
+      <div class="quote-content">
+        <h1>Random Quote Generator</h1>
+        <p>{{ quote.content }}</p>
+        <p>- {{ quote.author }}</p>
+        <button @click="generateQuote">Generate New Quote</button>
+
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,7 +40,7 @@ export default {
   methods: {
     generateQuote() {
       const randomIndex = Math.floor(Math.random() * this.quotes.length);
-      this.quote = this.quotes[randomIndex];
+      this.quote = this.quotes[ randomIndex ];
     }
   },
   mounted() {
@@ -45,21 +50,36 @@ export default {
 </script>
 
 <style scoped>
-div {
+.quote-container {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
   padding: 10px;
   font-size: 15px;
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px; /* Adjust this value as needed */
+  max-width: 600px;
+}
+
+.quote-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   p {
     color: rgb(177, 14, 14);
     font-size: 18px;
   }
 
   h1 {
-    color: rgb(28, 88, 26);
+    color: rgb(7, 80, 5);
   }
+
+
 }
 
 button {
@@ -68,10 +88,13 @@ button {
   font-size: 16px;
   cursor: pointer;
   background-color: white;
-  color: red;
+  color: rgb(177, 14, 14);
+  border-radius: 5px;
+  border-color: #635518;
+
 }
 
-button:hover{
+button:hover {
   background-color: rgb(7, 80, 5);
   color: yellow;
 }
